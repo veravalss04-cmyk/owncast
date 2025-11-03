@@ -28,6 +28,7 @@
 		"@svgr/webpack",
 		"@types/markdown-it",
 		"@types/prop-types",
+		"@types/ua-parser-js",
 		"babel-loader",
 		"chromatic",
 		"cypress",

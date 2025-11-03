@@ -1,4 +1,4 @@
-import UAParser from 'ua-parser-js';
+import { UAParser } from 'ua-parser-js';
 
 export function formatIPAddress(ipAddress: string): string {
   const ipAddressComponents = ipAddress.split(':');
@@ -43,8 +43,9 @@ export function parseSecondsToDurationString(seconds = 0) {
 }
 
 export function formatUAstring(uaString: string) {
-  const parser = UAParser(uaString);
-  const { device, os, browser } = parser;
+  const parser = new UAParser(uaString);
+  const result = parser.getResult();
+  const { device, os, browser } = result;
   const { major: browserVersion, name } = browser;
   const { version: osVersion, name: osName } = os;
   const { model, type } = device;
